@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="styles/style.css">
+
+    <link rel="stylesheet" href="styles/Carrier1/style.css">
+
+    <link rel="stylesheet" href="styles/Carrier2/style.css">
+
+    <link rel="stylesheet" href="styles/Carrier3/style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Activity Database</title>
+</head>
+<body class="carrier"><!-- Carrier -->
+
+    <div class="container"><!-- Container -->
+
+        <div class="carrier1" id="anime1"><!-- Carrier 1 -->
+
+            <form id="subform" class="subform">
+                <h1>Create New Account</h1>
+                <h2>Enter Your First Name: </h2>
+                <input type="text" placeholder="First Name" required>
+                <h2>Enter Your Middle Name (Optional): </h2>
+                <input type="text" placeholder="Middle Name(Optional)">
+                <h2>Enter Your Last Name: </h2>
+                <input type="text" placeholder="Last Name" required>
+                <h2><u>Create Log in</u></h2>
+                <h2>Enter Your Username: </h2>
+                <input type="text" placeholder="Username" required>
+                <h2>Enter Your Password: </h2>
+                <input type="password" placeholder="Password" required>
+                <h2>Confirm Your Password: </h2>
+                <input type="password" placeholder="Confirm Password" required>
+                <div class="buttons"><!-- Buttons -->
+                    <div><button type="button" onclick="backfunction()">Back<span></span></button></div>
+                    <div><button type="submit">Submit<span></span></button></div>
+                </div><!-- Buttons > -->
+
+            </form>
+
+        </div><!-- Carrier 1 > -->
+
+        <div class="carrier2" id="anime2"><!-- Carrier2 -->
+            <div class="car2left">
+                <h1>DATABASE SIMPLE ACTIVITY <br> BY Marc, Cord's and France's</h1>
+                <div class="car2buttonleft">
+                    <button onclick="loginPopUp()">Log In</button>
+                    <button onclick="signupPopUp()">Sign Up</button>
+                </div>
+            </div>
+            <div class="car2right">
+                <video autoplay muted loop class="video-background">
+                    <source src="video/background.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+
+        </div><!-- Carrier2 > -->
+        <div class="carrier3" id="anime3"><!-- Carrier 3 -->
+            <form id="logInform" class="logInform">
+                <div class="username" id="usernameNext">
+                <p onclick="back1()"><u>back</u></p>
+                <h2>USERNAME</h2>
+                <input type="text" placeholder="Enter Your Username" required>
+                <div><button type="button" onclick="usernext()">Next</button></div>
+                </div>
+                <div class="password" id="passwordNext">
+                <p onclick="back2()"><u>back</u></p>
+                <h2>PASSWORD</h2>
+                <input type="password" placeholder="Enter Your Password" required>
+                <div><button type="submit">Log In</button></div>
+                </div>
+            </form>
+        </div><!-- Carrier  3 > -->
+        
+    </div><!-- Container > -->
+
+</body><!-- Carrier > -->
+
+<script src="scripts/databaseValid/script.js"></script><!-- Validation -->
+<script src="scripts/animation/script.js"></script><!-- Animation -->
+</html>
