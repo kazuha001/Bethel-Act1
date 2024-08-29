@@ -35,5 +35,5 @@
 
     </div><!-- Container > -->
 </body><!-- Carrier 1 > -->
-    <script src=""></script>
+    <script src="scripts/databaseValid/script.js"></script>
 </html>
