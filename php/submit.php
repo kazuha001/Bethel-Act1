@@ -4,11 +4,10 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "userdata";
-$socket = "C:/xampp/mysql/mysql.sock";
 
-$conn = new mysqli($servername, $username, $password, $database, null, $socket);
+$conn = new mysqli($servername, $username, $password, $database);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$_SERVER["REQUEST_METHOD"] == "POST";
 
 $fname_id = $_POST["fname"];
 $mname_id = $_POST["mname"];
@@ -25,7 +24,6 @@ if ($sql->execute()) {
     echo "Error";
 }
 
-}
 $sql->close();
 $conn->close();
 
