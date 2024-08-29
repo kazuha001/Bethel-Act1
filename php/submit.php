@@ -7,7 +7,7 @@ $database = "userdata";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST";) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $fname_id = $_POST["fname"];
 $mname_id = $_POST["mname"];

@@ -13,41 +13,66 @@
     <title>User Log In</title>
 </head>
 
+<body class="carrier">
+
+<div class="container">
+
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "userdata";
+session_start();
 
-$conn = new mysqli($servername, $username, $password, $database);
+if (!$_SESSION['islogin']) {
 
-$sql = "SELECT "
+    header('Location: login.php');
 
-$result = $conn
+}else {
 
-<body class="carrier"><!-- Carrier 1 -->
-    <div class="container"><!-- Container -->
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "userdata";
+    
+    $conn = new mysqli($servername, $username, $password, $database);
+    
+    $sql = "SELECT * FROM `data`";
+    
+    $result = $conn->query($sql);
+    
+    if ($result->num_rows > 0) {
+        
+        $row = $result->fetch_all(MYSQLI_ASSOC);
 
-        <div class="Carrier4"><!-- Carrier4 -->
-            <div class="results">
+        foreach($result as $row) {
+    
+        echo '<div class="Carrier4">'; 
+        echo '<div class="results">';
+    
+        echo '<h2><u>Personal Information</u></h2>';
+        echo '<div><h4>First Name: </h4><p>' . $row['fname'] . '</p></div>';
+        echo '<div><h4>Middle Name: </h4><p>' . $row['mname'] . '</p></div>';
+        echo '<div><h4>Last Name: </h4><p>' . $row['lname'] . '</p></div>';
+        echo '<h2><u>Account Information</u></h2>';
+        echo '<div><h4>Username: </h4><p>' . $row['user'] . '</p></div>';
+        echo '<div><h4>Password: </h4><p>' . $row['pass'] . '</p></div>';
+    
+        echo '</div>';
+                
 
-            <h2><u>Personal Information</u></h2>
-            <div><h4>First Name: </h4><p>Marc Giestin Louis</p></div>
-            <div><h4>Middle Name: </h4><p></p></div>
-            <div><h4>Last Name: </h4><p>Cordova</p></div>
-            <h2><u>Account Information</u></h2>
-            <div><h4>Username: </h4><p>kazuha001</p></div>
-            <div><h4>Password: </h4><p>123456789</p></div>
+        }
+    }
 
-            </div>
-            <div class="buttons">
-                <a href="#">Log Out</a>
-            </div>
-            
-        </div><!-- Carrier4 > -->
+}
 
-    </div><!-- Container > -->
-</body><!-- Carrier 1 > -->
-</html>
+
+
 ?>
+
+<div class="buttons">
+                    <a href="logout.php">Log Out</a>
+                </div>
+                
+            </div>
+    
+        </div>
+    </body>
+</html>
