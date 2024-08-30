@@ -35,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 } else {
     echo "Invalid request method";
+    header('Location: http://localhost/Bethel-Act1-main/index.html');
 }
 
 $conn->close();
