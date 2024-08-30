@@ -35,10 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 } else {
     echo "Invalid request method";
-    header('Location: http://localhost/Bethel-Act1-main/index.html');
-    echo "<a href='http://localhost/Bethel-Act1-main/index.html'> Go Back </a>";
+    
 }
-
+echo "<a href='http://localhost/Bethel-Act1-main/index.html'> Go Back </a>";
 $conn->close();
 
 ?>
