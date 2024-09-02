@@ -29,9 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header('Location: user.php');
         exit;
     } else {
-
+        sleep(2);
         echo "Invalid Operations";
-
+        
         echo '<a href="http://localhost/Bethel-Act1-main/index.html">Go back</a>';
         
     }
