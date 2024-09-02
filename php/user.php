@@ -69,15 +69,16 @@ if (!$_SESSION['islogin']) {
 
     $conn = new mysqli($servername, $username, $password, $database);
 
-    $sql = "SELECT * FROM `employees`";
+    $sql = $conn->prepare("SELECT * FROM employees");
+    $sql->execute();
 
-    $result = $conn->query($sql);
+    $result = $sql->get_result();
 
     if ($result->num_rows > 0) {
 
-        $row = $result->fetch_all(MYSQLI_ASSOC);
+        $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-        foreach($result as $row) {
+        foreach($rows as $row) {
 
             echo '<div class="follow">';
 
@@ -121,16 +122,21 @@ if (!$_SESSION['islogin']) {
         <label for="Employees">' . $row["yearly"] .  ' pesos</label>
     </div>';
 
-        }
+            echo '</div>';
+        } else {
 
-        echo '</div>';
+        echo 'No Employees Found';
 
+        
     }
 
 
 
 
 }
+
+$sql->close();
+
 
 $conn->close();
 
